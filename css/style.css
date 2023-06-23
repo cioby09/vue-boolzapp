@@ -7,8 +7,11 @@
 /* Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto. */
 
 /* Layout */
+
 img {
     max-width: 100%;
+    border-radius: 50%;
+    height: 5vh;
 }
 
 .wrapper {
@@ -25,19 +28,42 @@ img {
 
 /* Menu */
 .menu {
-    border: 2px solid blue;
+    border: 1px solid blue;
     width: 35%;
     height: 100%;
 }
 
 /* Menu Header */
 .menu-header {
+    display: flex;
+    justify-content: space-between;
     height: 7vh;
-    border: 2px solid black;
+    background-color: #EAEAEA;
 }
 
-.menu-header img {
-    height: 6vh;
+.menu-left-header {
+    display: flex;
+    align-items: center;
+    gap: 1vh;
+    padding-left: 1vh;
+}
+
+.menu-left-header span {
+    font-size: 0.9vw;
+    font-weight: 500;
+}
+
+.menu-right-header {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    line-height: 7vh;
+    padding-right: 1vw;
+}
+
+.menu-right-header i {
+    font-size: 1.2vw;
+    color: #B1B1B1;
 }
 
 /* Menu notification */
@@ -60,7 +86,7 @@ img {
 
 /* Chat */
 .chat {
-    border: 2px solid green;
+    border: 1px solid green;
     width: 65%;
     height: 100%;
 }
