@@ -68,8 +68,40 @@ img {
 
 /* Menu notification */
 .menu-notification {
+    display: flex;
     height: 8vh;
-    border: 2px solid black;
+    background-color: #8EDAFC;
+    align-items: center;
+    padding-left: 1vw;
+}
+
+.menu-notification i {
+    display: flex;
+    align-items: center;
+    background-color: #F2FBFF;
+    color: #8EDAFC;
+    font-size: 1vw;
+    padding: 1.1vh;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
+
+.menu-notification-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0.5vw;
+}
+
+.up-notification {
+    font-size: 0.8vw;
+    font-weight: 500;
+}
+
+.down-notification {
+    font-size: 0.7vw;
+    font-weight: 300;
+    text-decoration: underline;
 }
 
 /* Menu search */
