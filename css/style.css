@@ -106,8 +106,29 @@ img {
 
 /* Menu search */
 .menu-search {
+    display: flex;
     height: 5vh;
-    border: 2px solid black;
+    background-color: #EAEAEA;
+    padding: 0.8vh;
+    color: #B6B9BB;
+}
+
+.search-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 13%;
+    background-color: #FFFFFF;
+    border-right: 0.1vw solid #EAEAEA;
+    font-size: 1vw;
+}
+
+.search-bar {
+    font-size: 0.7vw;
+    font-weight: 500;
+    width: 87%;
+    background-color: #FFFFFF;
+    border: none;
 }
 
 /* Menu users list */
