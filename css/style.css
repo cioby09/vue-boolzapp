@@ -1,23 +1,82 @@
+/* Consegna */
+
+/* Milestone 1 */
+
+/* Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse */
+
+/* Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto. */
+
 /* Layout */
+img {
+    max-width: 100%;
+}
+
 .wrapper {
+    display: flex;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(180deg, #009688 10%, #D9DBD6 10%);
+    background: linear-gradient(180deg, #009688 15%, #D9DBD6 15%);
 }
 
 .app-container {
     width: 80%;
-    height: 90vh;
+    height: 95vh;
 }
 
+/* Menu */
 .menu {
     border: 2px solid blue;
     width: 35%;
     height: 100%;
 }
 
-.active-chat {
+/* Menu Header */
+.menu-header {
+    height: 7vh;
+    border: 2px solid black;
+}
+
+.menu-header img {
+    height: 6vh;
+}
+
+/* Menu notification */
+.menu-notification {
+    height: 8vh;
+    border: 2px solid black;
+}
+
+/* Menu search */
+.menu-search {
+    height: 5vh;
+    border: 2px solid black;
+}
+
+/* Menu users list */
+.menu-users-list {
+    height: 75vh;
+    border: 2px solid black;
+}
+
+/* Chat */
+.chat {
     border: 2px solid green;
     width: 65%;
     height: 100%;
+}
+
+/* Chat header */
+.chat-header {
+    height: 7vh;
+    border: 2px solid black;
+}
+
+.chat-window {
+    height: 80vh;
+    border: 2px solid black;
+}
+
+.chat-input {
+    height: 8vh;
+    border: 2px solid black;
 }
