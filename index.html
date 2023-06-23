@@ -48,7 +48,16 @@
                         <input class="search-bar" type="text" placeholder="Cerca o inizia una nuova chat" />
                     </div>
                     <div class="menu-users-list">
-
+                        <div class="user-box" v-for="username in contacts">
+                            <div class="user-img">
+                                <img :src="username.avatar" alt="">
+                            </div>
+                            <div class="user-info">
+                                <span class="user-name">{{ username.name }}</span>
+                                <span class="user-last">Ultimo messaggio inviato</span>
+                            </div>
+                            <div class="user-time">12:00</div>
+                        </div>
                     </div>
                 </div>
                 <!-- /App menu (Left column) -->
