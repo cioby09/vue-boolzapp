@@ -189,10 +189,18 @@ createApp({
                 message: myinput,
                 status: "sent"
             };
+            setTimeout(() => {
+                this.usermessages.push({
+                    date: currentDate,
+                    message: "Ok",
+                    status: "received"
+                });
+            }, 1000);
     
             this.usermessages.push(myMessage);
             this.$refs.newmessage.value = "";
-        }
+        },
+
     }
 
 }).mount("#app");
