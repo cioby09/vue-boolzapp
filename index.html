@@ -48,15 +48,15 @@
                         <input class="user-search" type="text" placeholder="Cerca o inizia una nuova chat" v-model="contactsearch" @keyup="searchContacts"/>
                     </div>
                     <div class="menu-users-list">
-                        <div class="user-box" v-for="username in contacts" @click="showChat(username)" v-show="username.visible">
+                        <div class="user-box" v-for="contact in contacts" @click="showChat(contact)" v-show="contact.visible" :class="indexuser == contact ? 'active' : '' ">
                             <div class="user-img">
-                                <img :src="username.avatar" alt="">
+                                <img :src="contact.avatar" alt="">
                             </div>
                             <div class="user-info">
-                                <span class="user-name">{{ username.name }}</span>
-                                <span class="user-last">Ultimo messaggio inviato</span>
+                                <span class="user-name">{{ contact.name }}</span>
+                                <span class="user-last">{{ contact.messages[contact.messages.length -1].message }}</span>
                             </div>
-                            <div class="user-time">12:00</div>
+                            <div class="user-time">{{ contact.messages[contact.messages.length -1].date.substring(11).slice(0, -3) }}</div>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                             <img :src="useravatar" alt="">
                             <div class="user-credentials">
                                 <span class="user-name">{{ username }}</span>
-                                <span class="user-access">Ultimo accesso oggi alle 12:00</span>
+                                <span class="user-access" v-if="useravatar !== '' ">Ultimo accesso oggi alle 12:00</span>
                             </div>
                         </div>
                         <div class="chat-right-header">
@@ -91,7 +91,7 @@
                             <i class="fa-regular fa-face-smile"></i>
                         </div>
                         <div class="chat-bar">
-                            <input type="text" placeholder="Scrivi un messaggio" ref="newmessage" @keyup.enter="newChatMessage(newsmg)">
+                            <input type="text" placeholder="Scrivi un messaggio" ref="newmessage" @keyup.enter="newChatMessage(newmsg)">
                         </div>
                         <div class="recording-input">
                             <i class="fa-solid fa-microphone"></i>

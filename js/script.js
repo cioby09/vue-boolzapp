@@ -8,6 +8,7 @@ createApp({
             usermessages: "",
             newmessage: "",
             contactsearch: "",
+            messagedate: "",
             contacts: [
                 {
                     name: 'Michele',
@@ -175,6 +176,7 @@ createApp({
     },
     methods: {
         showChat(user) {
+            this.indexuser = user;
             this.useravatar = user.avatar;
             this.username = user.name;
             this.usermessages = user.messages;
