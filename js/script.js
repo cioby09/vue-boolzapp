@@ -6,6 +6,7 @@ createApp({
             useravatar: "",
             username: "",
             usermessages: "",
+            newmessage: "",
             contacts: [
                 {
                     name: 'Michele',
@@ -177,7 +178,21 @@ createApp({
             this.username = user.name;
             this.usermessages = user.messages;
             console.log(user);
-          }
+          },
+          newChatMessage() {
+            let currentDate = new Date().toLocaleString("en-GB");
+    
+            const myinput = this.$refs.newmessage.value;
+            console.log(myinput);
+            const myMessage = {
+                date: currentDate,
+                message: myinput,
+                status: "sent"
+            };
+    
+            this.usermessages.push(myMessage);
+            this.$refs.newmessage.value = "";
+        }
     }
 
 }).mount("#app");

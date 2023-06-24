@@ -81,7 +81,8 @@
                     <div class="chat-window">
                         <div class="message-container">
                             <div class="message-box" v-for="usermessage in usermessages" :class="usermessage.status == 'sent' ? 'green' : 'white'">
-                                <span>{{ usermessage.message }}</span>
+                                <span class="message">{{ usermessage.message }}</span>
+                                <span class="message-time">{{ usermessage.date.substring(11).slice(0, -3) }}</span>
                             </div>
                         </div>
                     </div>
@@ -90,7 +91,7 @@
                             <i class="fa-regular fa-face-smile"></i>
                         </div>
                         <div class="chat-bar">
-                            <input type="text" placeholder="Scrivi un messaggio">
+                            <input type="text" placeholder="Scrivi un messaggio" ref="newmessage" @keyup.enter="newChatMessage(newsmg)">
                         </div>
                         <div class="recording-input">
                             <i class="fa-solid fa-microphone"></i>
