@@ -156,6 +156,7 @@ img {
     display: flex;
     height: 8vh;
     border-top: 1px solid #EAEAEA;
+    cursor: pointer;
 }
 
 .user-img {
@@ -213,8 +214,35 @@ img {
 
 /* Chat window */
 .chat-window {
+    display: flex;
+    justify-content: center;
     height: 80vh;
     background-image: url("../img/mine.jpg");
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    margin: 5vh 0;
+    gap: 1vh;
+    width: 40vw;
+}
+
+.message-box {
+    width: 16vw;
+    border-radius: 0.5vw;
+    padding: 0.8vw;
+    font-size: 0.8vw;
+    font-weight: 400;
+}
+
+.green {
+    background-color: #D5F9BA;
+    align-self: flex-end;
+}
+
+.white {
+    background-color: #FFFFFF;
 }
 
 /* Chat input */

@@ -48,7 +48,7 @@
                         <input class="search-bar" type="text" placeholder="Cerca o inizia una nuova chat" />
                     </div>
                     <div class="menu-users-list">
-                        <div class="user-box" v-for="username in contacts">
+                        <div class="user-box" v-for="username in contacts" @click="showChat(username)">
                             <div class="user-img">
                                 <img :src="username.avatar" alt="">
                             </div>
@@ -66,9 +66,9 @@
                 <div class="chat">
                     <div class="chat-header">
                         <div class="chat-left-header">
-                            <img src="img/avatar_1.jpg" alt="Avatar 1">
+                            <img :src="useravatar" alt="">
                             <div class="user-credentials">
-                                <span class="user-name">Michele</span>
+                                <span class="user-name">{{ username }}</span>
                                 <span class="user-access">Ultimo accesso oggi alle 12:00</span>
                             </div>
                         </div>
@@ -79,7 +79,11 @@
                         </div>
                     </div>
                     <div class="chat-window">
-
+                        <div class="message-container">
+                            <div class="message-box" v-for="usermessage in usermessages" :class="usermessage.status == 'sent' ? 'green' : 'white'">
+                                <span>{{ usermessage.message }}</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="chat-input">
                         <div class="emoji-input">

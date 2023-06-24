@@ -3,6 +3,9 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            useravatar: "",
+            username: "",
+            usermessages: "",
             contacts: [
                 {
                     name: 'Michele',
@@ -163,10 +166,18 @@ createApp({
                             message: 'OK!!',
                             status: 'received'
                         }
-                    ],
+                    ]
                 }
             ]
         }
+    },
+    methods: {
+        showChat(user) {
+            this.useravatar = user.avatar;
+            this.username = user.name;
+            this.usermessages = user.messages;
+            console.log(user);
+          }
     }
 
 }).mount("#app");
