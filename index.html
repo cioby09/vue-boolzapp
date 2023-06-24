@@ -69,7 +69,7 @@
                             <img :src="useravatar" alt="">
                             <div class="user-credentials">
                                 <span class="user-name">{{ username }}</span>
-                                <span class="user-access" v-if="useravatar !== '' ">Ultimo accesso oggi alle 12:00</span>
+                                <span class="user-access" v-if="useravatar !== '' ">Ultimo accesso oggi alle {{ usermessages[usermessages.length - 1].date.substring(11).slice(0, - 3) }}</span>
                             </div>
                         </div>
                         <div class="chat-right-header">
