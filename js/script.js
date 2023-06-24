@@ -7,6 +7,7 @@ createApp({
             username: "",
             usermessages: "",
             newmessage: "",
+            contactsearch: "",
             contacts: [
                 {
                     name: 'Michele',
@@ -178,29 +179,33 @@ createApp({
             this.username = user.name;
             this.usermessages = user.messages;
             console.log(user);
-          },
-          newChatMessage() {
-            let currentDate = new Date().toLocaleString("en-GB");
-    
-            const myinput = this.$refs.newmessage.value;
-            console.log(myinput);
-            const myMessage = {
-                date: currentDate,
-                message: myinput,
-                status: "sent"
-            };
-            setTimeout(() => {
-                this.usermessages.push({
-                    date: currentDate,
-                    message: "Ok",
-                    status: "received"
-                });
-            }, 1000);
-    
-            this.usermessages.push(myMessage);
-            this.$refs.newmessage.value = "";
         },
+        newChatMessage() {
+          let currentDate = new Date().toLocaleString("en-GB");
 
+          const myinput = this.$refs.newmessage.value;
+          console.log(myinput);
+          const myMessage = {
+              date: currentDate,
+              message: myinput,
+              status: "sent"
+          };
+          setTimeout(() => {
+              this.usermessages.push({
+                  date: currentDate,
+                  message: "Ok",
+                  status: "received"
+              });
+          }, 1000);
+
+          this.usermessages.push(myMessage);
+          this.$refs.newmessage.value = "";
+        },
+        searchContacts() {
+            this.contacts.forEach((elem) => {
+                elem.visible = elem.name.toLowerCase().includes(this.contactsearch.toLowerCase()) || 
+                elem.name.includes(this.contactsearch);
+            });
+        }
     }
-
 }).mount("#app");
